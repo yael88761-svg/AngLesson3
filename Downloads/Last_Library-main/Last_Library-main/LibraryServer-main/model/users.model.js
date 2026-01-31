@@ -1,6 +1,8 @@
 import Joi from 'joi';
 import mongoose from "mongoose";
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+
 const { Schema, model } = mongoose;
 // הגדרת הסכמה למשתמש
 const userSchema = new Schema({
@@ -24,6 +26,19 @@ userSchema.method('comparePasswords', function (newPassword) {
     const isEqual = bcrypt.compareSync(newPassword, this.password);
     return isEqual;
 });
+
+userSchema.methods.generateToken = function () {
+    return jwt.sign(
+        {
+            id: this._id,
+            role: this.role
+        },
+        process.env.JWT_SECRET,
+        {
+            expiresIn: '1h'
+        }
+    );
+};
 
 // עבור כל הפונקציות שמחזירות את היוזר לקליינט
 userSchema.set('toJSON', {
