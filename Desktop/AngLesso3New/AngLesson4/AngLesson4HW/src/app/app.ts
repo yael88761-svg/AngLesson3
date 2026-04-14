@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { ListItem } from './components/list-item/list-item';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ListItem],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('AngLesson3');
+  protected readonly title = signal('AngLesson4HW');
 }

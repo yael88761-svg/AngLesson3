@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "AngLesson3": {
+    "AngLesson4HW": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "AngLesson3:build:production"
+              "buildTarget": "AngLesson4HW:build:production"
             },
             "development": {
-              "buildTarget": "AngLesson3:build:development"
+              "buildTarget": "AngLesson4HW:build:development"
             }
           },
           "defaultConfiguration": "development"
