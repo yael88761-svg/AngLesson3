@@ -1,0 +1,40 @@
+  .form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #3f51b5;
+    border-radius: 12px;
+    direction: rtl; /* יישור לימין */
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+  }
+  .form-group { margin-bottom: 15px; }
+  .input-field {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .answer-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .index-label { font-weight: bold; color: #3f51b5; }
+  .small-input { width: 80px; }
+  .save-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .save-btn:hover { background-color: #303f9f; }

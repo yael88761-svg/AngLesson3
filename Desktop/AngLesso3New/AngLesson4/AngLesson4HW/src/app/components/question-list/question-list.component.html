@@ -1,0 +1,7 @@
+<div class="list-container">
+  @for (q of allQuestions; track q.id) {
+    <app-question-item [questionData]="q"></app-question-item>
+  } @empty {
+    <p>אין שאלות להצגה...</p>
+  }
+</div>

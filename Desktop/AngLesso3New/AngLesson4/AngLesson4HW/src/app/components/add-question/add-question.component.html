@@ -1,0 +1,42 @@
+<p>add-question works!</p>
+<div class="form-container">
+  <h2>הוספת שאלה חדשה למאגר</h2>
+  
+  <div class="form-group">
+    <label for="questionText">תיאור השאלה:</label>
+    <input 
+      id="questionText"
+      type="text" 
+      [(ngModel)]="newQuestion.question" 
+      placeholder="לדוגמה: מה בירת ישראל?"
+      class="input-field">
+  </div>
+
+  <div class="answers-section">
+    <label>תשובות אפשריות:</label>
+    @for (ans of newQuestion.answers; track $index) {
+      <div class="answer-row">
+        <span class="index-label">{{ $index }}.</span>
+        <input 
+          type="text" 
+          [(ngModel)]="newQuestion.answers[$index]" 
+          [placeholder]="'תשובה מספר ' + $index"
+          class="input-field">
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="correctIndex">אינדקס התשובה הנכונה (0-3):</label>
+    <input 
+      id="correctIndex"
+      type="number" 
+      [(ngModel)]="newQuestion.correctAnswer" 
+      min="0" 
+      max="3"
+      class="input-field small-input">
+  </div>
+
+  <button class="save-btn" (click)="saveQuestion()">שמור שאלה בשרת</button>
+</div>
+
